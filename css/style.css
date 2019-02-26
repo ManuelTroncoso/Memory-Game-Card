@@ -1,6 +1,24 @@
 .carta{
-    background-color: red;
-    width: 30px;
-    height: 30px;
+    width: 100px;
+    height: 100px;
     margin:15px;
+    background-color: red;
+}
+
+
+.js{
+    background-image: url(Photo/js.png)
+}
+.php{
+    background-image: url(Photo/php.jpeg)
+}
+.css3{
+    background-image: url(Photo/ccs.png)
+}
+.html5{
+    background-image: url(Photo/html.png)
+}
+.linux{
+    background-image: url(Photo/linux.png)
+
 }
