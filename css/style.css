@@ -5,6 +5,9 @@
     background-color: red;
 }
 
+button{
+    border-style: none;
+}
 
 .js{
     background-image: url(Photo/js.png)
@@ -20,5 +23,4 @@
 }
 .linux{
     background-image: url(Photo/linux.png)
-
 }
