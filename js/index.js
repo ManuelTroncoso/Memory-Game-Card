@@ -4,8 +4,9 @@ $(document).ready(function () {
     let cont = 0;
     var click = Array();
     let acierto = 0;
-    for (let i = 0; i < 10; i++) {
-        $("#cartas").append(`<button class="col-sm-4 carta" id="carta` + i + `">` + i + `</button>`);
+    for (let i = 0, j = 1; i < 12;j++, i++) {
+        $("#cartas").append(`<div class="carta" id="carta` + i + `"></div>`);
+        if(j == 3){$("#cartas").append("<br>"); j = 0}
         $("#carta" + i).click(function () {
             if (click.length < 2) {
                 let j = 0;
@@ -22,15 +23,15 @@ $(document).ready(function () {
                             $("." + solucion[click[0]][2]).removeClass(solucion[click[0]][2]);
                             $("." + solucion[click[1]][2]).removeClass(solucion[click[1]][2]);
                             click = [];
-                        }, 1000);
+                        }, 500);
                     }
                     else {
-                        $("." + solucion[click[0]][2]).attr("disabled", true);
+                        $("." + solucion[click[0]][2]).css("pointer-events", "none");
                         click = [];
                         acierto++;
                         console.log(acierto)
                     }
-                    if (acierto == 5) {
+                    if (acierto == 6) {
                         setTimeout(function () { alert("Has ganado") }, 100)
                     }
                     array = [];
@@ -51,11 +52,11 @@ $(document).ready(function () {
 //Funcion para asignar parejas de cartas.
 function posicionesAleatorias() {
     //Clases y parejas de numeros
-    let clase = ["js", "php", "html5", "css3", "linux"];
+    let clase = ["js", "php", "html5", "css3", "linux", "angular"];
     let parejas = Array();
 
     //Podemos tener un array ordenado y desordenarlo para obtener las parejas, cada dos es una pareja.
-    let lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     lista = lista.sort(function () { return Math.random() - 0.5 });
     //Coger de dos en dos los valores y añadirlos al array
     //Con este bucle se añade las parejas al array de parejas.
